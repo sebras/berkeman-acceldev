@@ -7,9 +7,9 @@ Use and Purpose
 ===============
 
 This is one of three repositories that are intended to be used together:
-1.    https://github.com/eBay/accelerator-project_skeleton
-2.    https://github.com/eBay/accelerator-gzutil
-3.    https://github.com/eBay/accelerator
+1.    https://github.com/drougge/accelerator_project_skeleton
+2.    https://github.com/drougge/gzutil
+3.    https://github.com/drougge/accelerator
 
 The purpose of the Accelerator project is to allow for fast data processing with big data. Extensive documentation on the purpose and how to use the Accelerator projects is covered in the reference manual found here:
 
@@ -33,14 +33,14 @@ but is in no way limited to these systems or versions.
 Installation
 ============
 
-1. Clone the https://github.com/eBay/accelerator-project_skeleton repository.
+1. Clone the https://github.com/drougge/accelerator_project_skeleton repository.
 2. Install dependencies.  On Debian and Ubuntu
 
     ```sudo apt-get install build-essential python-dev python3-dev zlib1g-dev git virtualenv```
 
 3. Run the setup script
     ```
-    cd accelerator-project_skeleton
+    cd accelerator_project_skeleton
     ./init.py
     ```
     Please read and modify this script according to your needs.
