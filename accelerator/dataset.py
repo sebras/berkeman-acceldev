@@ -1122,6 +1122,8 @@ class SkipSlice(Exception):
 
 def job_datasets(jobid):
 	"""All datasets in a jobid"""
+	if isinstance(jobid, Dataset):
+		jobid = jobid.jobid
 	jobid = str(jobid) # to avoid surprises if it's a Dataset instance.
 	fn = resolve_jobid_filename(jobid, 'datasets.txt')
 	if os.path.exists(fn):
