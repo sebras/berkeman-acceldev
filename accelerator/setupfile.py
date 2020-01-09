@@ -100,7 +100,7 @@ def encode_setup(data, sort_keys=True, as_str=False):
 			return src
 	res = _encode_with_compact(
 		copy(data),
-		compact_keys=('starttime', 'endtime', 'profile', '_typing',),
+		compact_keys=('starttime', 'endtime', 'exectime', '_typing',),
 		special_keys=('options', 'datasets', 'jobs',),
 	)
 	if PY3 and not as_str:
@@ -124,7 +124,7 @@ def _encode_with_compact(data, compact_keys, extra_indent=0, separator='\n', spe
 	special = []
 	for k in compact_keys:
 		if k in data:
-			if k == 'profile':
+			if k == 'exectime':
 				d = _round_floats(data[k], 3)
 				fmted = _encode_with_compact(d, ('analysis', 'per_slice',), 1, '')
 			else:

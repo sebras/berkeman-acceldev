@@ -62,7 +62,7 @@ def _mkjob(setup):
 		optset = optset,
 		hash   = setup.hash,
 		time   = setup.starttime,
-		total  = setup.profile.total,
+		total  = setup.exectime.total,
 	)
 	return job
 
