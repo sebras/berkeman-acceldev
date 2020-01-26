@@ -32,6 +32,7 @@ hashlabel is inherited or discarded as appropriate.
 from itertools import cycle
 from datetime import date, time, datetime
 
+from accelerator.compat import unicode
 from accelerator import subjobs
 from accelerator.extras import DotDict
 from accelerator.gzwrite import typed_writer
@@ -83,7 +84,7 @@ def synthesis(job, slices):
 		dw = job.datasetwriter(name='hashed on %s' % (hl,), columns={'a': 'unicode', 'b': 'unicode', 'c': 'unicode'}, hashlabel=hl)
 		w = dw.get_split_write()
 		for ix in range(1000):
-			w(str(ix), '%d.%d' % (ix, ix % 5 == 0), ('{"a": %s}' if ix % 3 else '%d is bad') % (ix,))
+			w(unicode(ix), '%d.%d' % (ix, ix % 5 == 0), ('{"a": %s}' if ix % 3 else '%d is bad') % (ix,))
 		src_ds = dw.finish()
 		assert src_ds.hashlabel == hl
 		test(src_ds, dict(column2type={'a': 'int32_10', 'b': 'number:int'}, filter_bad=True), 800)
@@ -194,7 +195,7 @@ def synthesis(job, slices):
 				if isinstance(key, bytes):
 					key = key.decode('ascii')
 				else:
-					key = str(key)
+					key = unicode(key)
 				assert data.get(key) == line[1:], "%s (hl %s) didn't have the right data for line %r" % (ds, hl, line[0],)
 				hv = line[sorted(src_ds.columns).index(hl)]
 				assert hl_hash(hv) % slices == sliceno, "%s (hl %s) didn't hash %r correctly" % (ds, hl, hv,)
