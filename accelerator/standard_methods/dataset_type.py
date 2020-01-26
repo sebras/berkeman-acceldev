@@ -1800,9 +1800,10 @@ static PyObject *py_%s(PyObject *self, PyObject *args)
 	for (int i = 0; i < in_count; i++) {
 		in_fns[i] = PyBytes_AS_STRING(PyList_GetItem(o_in_fns, i));
 		err1(!in_fns[i]);
-		offsets[i] = PyLong_AsUnsignedLongLong(PyList_GetItem(o_offsets, i));
-		err1(offsets[i] == (off_t)-1);
+		offsets[i] = PyLong_AsLongLong(PyList_GetItem(o_offsets, i));
+		err1(PyErr_Occurred());
 		max_counts[i] = PyLong_AsLongLong(PyList_GetItem(o_max_counts, i));
+		err1(PyErr_Occurred());
 	}
 
 	if (!PyList_Check(o_out_fns)) Py_RETURN_TRUE;
