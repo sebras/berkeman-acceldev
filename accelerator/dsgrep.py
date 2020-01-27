@@ -35,9 +35,9 @@ from accelerator import g
 def main(argv):
 	usage = "%(prog)s [options] pattern ds [ds [...]] [column [column [...]]"
 	parser = ArgumentParser(usage=usage, prog=argv.pop(0))
-	parser.add_argument('-c', '--chain',       dest="chain",      action='store_true', help="Follow dataset chains", )
-	parser.add_argument('-i', '--ignore-case', dest="ignorecase", action='store_true', help="Case insensitive pattern", )
-	parser.add_argument('-s', '--slice',       dest="slice",      action='append',     help="Grep this slice only. Can be specified multiple times.",  type=int)
+	parser.add_argument('-c', '--chain',       dest="chain",      action='store_true', help="follow dataset chains", )
+	parser.add_argument('-i', '--ignore-case', dest="ignorecase", action='store_true', help="case insensitive pattern", )
+	parser.add_argument('-s', '--slice',       dest="slice",      action='append',     help="grep this slice only, can be specified multiple times",  type=int)
 	parser.add_argument('pattern')
 	parser.add_argument('dataset')
 	parser.add_argument('columns', nargs='*', default=[])
