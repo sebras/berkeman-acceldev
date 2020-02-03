@@ -28,8 +28,8 @@ class UserError(AcceleratorError):
 	"""Raised when the user (of a shell command) did something wrong"""
 	pass
 
-class DaemonError(AcceleratorError):
-	"""Error return from a daemon call (not a method failing)"""
+class ServerError(AcceleratorError):
+	"""Error return from a server call (not a method failing)"""
 	pass
 
 class UrdError(AcceleratorError):

@@ -17,7 +17,7 @@
 #                                                                          #
 ############################################################################
 
-# This runs once per python version the daemon supports methods for.
+# This runs once per python version the server supports methods for.
 # On reload, it is killed and started again.
 # When launching a method, it forks and calls the method (without any exec).
 # Also contains the function that starts these (new_runners) and the dict
