@@ -75,7 +75,7 @@ _cookie = 0
 
 @contextmanager
 def status(msg):
-	if g.running == 'daemon':
+	if g.running == 'server':
 		yield lambda _: None
 		return
 	global _cookie
