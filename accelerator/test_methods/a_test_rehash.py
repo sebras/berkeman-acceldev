@@ -21,7 +21,7 @@ from __future__ import division
 from __future__ import unicode_literals
 
 description = r'''
-Verify the dataset_rehash method with various options.
+Verify the dataset_hashpart method with various options.
 '''
 
 from datetime import date
@@ -73,7 +73,7 @@ def write(data, **kw):
 
 def verify(slices, data, source, previous=None, **options):
 	jid = subjobs.build(
-		"dataset_rehash",
+		"dataset_hashpart",
 		datasets=dict(source=source, previous=previous),
 		options=options,
 	)
