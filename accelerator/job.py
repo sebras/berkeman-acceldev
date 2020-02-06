@@ -103,6 +103,9 @@ class Job(unicode):
 		assert 'r' in mode, "Don't write to other jobs"
 		return open(self.filename(filename, sliceno), mode, encoding=encoding, errors=errors)
 
+	def files(self, ext=''):
+		return set(x for x in self.post.files.keys() if x.endswith(ext))
+
 	def withfile(self, filename, sliced=False, extra=None):
 		return JobWithFile(self, filename, sliced, extra)
 
