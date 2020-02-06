@@ -57,7 +57,7 @@ setup(
 
 	entry_points={
 		'console_scripts': [
-			'bd = accelerator.shell:main',
+			'ax = accelerator.shell:main',
 		],
 	},
 

@@ -3,7 +3,7 @@ Development repository!
 
 This is a dev repo, so I may well force push over it.
 
-Install with setup.py, then try "bd --help".
+Install with setup.py, then try "ax --help".
 
 License
 =======
