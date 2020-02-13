@@ -5,6 +5,7 @@ Extensive documentation is available here:
 [Home Page](https://exax.org/)  
 [PyPI](https://pypi.org/project/accelerator/)  
 
+`pip install accelerator`  
 After installation try "`ax --help`".
 
 

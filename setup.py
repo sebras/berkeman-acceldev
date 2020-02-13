@@ -43,7 +43,7 @@ def dirty():
 with open('README.md', 'r', encoding='utf-8') as fh:
 	long_description = []
 	for line in fh:
-		if not line.startswith('[PyPI]'):
+		if not line.startswith('[PyPI]') and not line.startswith('`pip'):
 			long_description.append(line)
 	long_description = ''.join(long_description)
 
