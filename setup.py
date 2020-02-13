@@ -45,7 +45,7 @@ with open('README.md', 'r', encoding='utf-8') as fh:
 	for line in fh:
 		if not line.startswith('[PyPI]'):
 			long_description.append(line)
-	long_description = ''.join(long_description[3:])
+	long_description = ''.join(long_description)
 
 if exists('PKG-INFO'):
 	with open('PKG-INFO', 'r', encoding='utf-8') as fh:

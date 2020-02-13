@@ -1,6 +1,3 @@
-Use and Purpose
-===============
-
 The Accelerator is a tool for fast and reproducible processing of large amounts of data.
 Extensive documentation is available here:
 
@@ -11,15 +8,15 @@ Extensive documentation is available here:
 After installation try "`ax --help`".
 
 
-Build and Runtime Environment
-=============================
+Supported Environments
+----------------------
 
 The Accelerator projects has been built, tested, and runs on:
  - Ubuntu 16.04, 18.04
- - Debian 8, 9, 10
- - FreeBSD 11.1, 11.2, 12.1
+ - Debian 9, 10
+ - FreeBSD 11.3, 12.1
 
-but is in no way limited to these systems or versions.
+but is not limited to these systems or versions.
 
 
 License
@@ -28,7 +25,6 @@ License
 Copyright 2017-2018 eBay Inc.  
 Modifications copyright (c) 2018-2020 Carl Drougge  
 Modifications copyright (c) 2019-2020 Anders Berkeman  
-
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
