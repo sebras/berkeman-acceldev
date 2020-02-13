@@ -125,7 +125,7 @@ setup(
 	author="Carl Drougge",
 	author_email="bearded@longhaired.org",
 	url="https://exax.org/",
-	description="A tool for fast and reproducible processing of large amounts of data",
+	description="A tool for fast and reproducible processing of large amounts of data.",
 	long_description=long_description,
 	long_description_content_type="text/markdown",
 	project_urls={
