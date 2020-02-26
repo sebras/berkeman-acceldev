@@ -157,6 +157,20 @@ class Job(unicode):
 					res.append(fh.read())
 		return ''.join(res)
 
+	def link_result(self, filename='result.pickle', linkname=None):
+		from accelerator.shell import cfg
+		if linkname is None:
+			linkname = filename
+		result_directory = cfg['result_directory']
+		"""Put a symlink to filename in result_directory"""
+		dest_fn = os.path.join(result_directory, linkname)
+		try:
+			os.remove(dest_fn + '_')
+		except OSError:
+			pass
+		os.symlink(os.path.join(self.path, filename), dest_fn + '_')
+		os.rename(dest_fn + '_', dest_fn)
+
 	def chain(self, length=-1, reverse=False, stop_job=None):
 		"""Like Dataset.chain but for jobs."""
 		if isinstance(stop_job, dict):
