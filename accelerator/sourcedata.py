@@ -43,15 +43,16 @@ type2iter = {
 	'unicode' : gzutil.GzUnicode,
 }
 
-from ujson import loads
+from json import JSONDecoder
 class GzJson(object):
 	def __init__(self, *a, **kw):
 		if PY3:
 			self.fh = gzutil.GzUnicode(*a, **kw)
 		else:
 			self.fh = gzutil.GzBytes(*a, **kw)
+		self.decode = JSONDecoder().decode
 	def __next__(self):
-		return loads(next(self.fh))
+		return self.decode(next(self.fh))
 	next = __next__
 	def close(self):
 		self.fh.close()
