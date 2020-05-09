@@ -80,6 +80,8 @@ def prepare():
 	translators = {}
 	# Special casing the string types here is just a performance
 	# optimisation. (Which changes the hash, but not how good it is.)
+	# Special casing json is needed because the iteration order of
+	# dicts is not fixed (depending on python version).
 	for n in columns:
 		col = datasets.source.columns[n]
 		if col.type == 'bytes' or (col.type == 'ascii' and PY2):
