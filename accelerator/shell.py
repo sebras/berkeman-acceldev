@@ -128,6 +128,11 @@ def cmd_dsinfo(argv):
 	return main(argv)
 cmd_dsinfo.help = '''display information about datasets'''
 
+def cmd_jobinfo(argv):
+	from accelerator.jobinfo import main
+	return main(argv)
+cmd_jobinfo.help = '''display information about jobs'''
+
 def cmd_run(argv):
 	from accelerator.build import main
 	return main(argv, cfg)
@@ -195,6 +200,7 @@ DEBUG_COMMANDS = {'dsgrep', 'dsinfo',}
 COMMANDS = dict(
 	dsgrep=cmd_dsgrep,
 	dsinfo=cmd_dsinfo,
+	jobinfo=cmd_jobinfo,
 	run=cmd_run,
 	server=cmd_server,
 	init=cmd_init,
